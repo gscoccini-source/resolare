@@ -1,5 +1,11 @@
+import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { IMG } from "@/lib/images";
+import { Hero } from "@/components/Hero";
+import { FeaturedListings } from "@/components/FeaturedListings";
+import { SellWithUs } from "@/components/SellWithUs";
+import { StatsSection } from "@/components/StatsSection";
 
 export default async function Home({
   params,
@@ -12,114 +18,107 @@ export default async function Home({
 
   return (
     <>
-      {/* HERO */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-amber-50 via-stone-50 to-emerald-50">
-        <div className="pointer-events-none absolute -top-32 -right-32 h-96 w-96 rounded-full bg-amber-200/40 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-32 -left-32 h-96 w-96 rounded-full bg-emerald-200/40 blur-3xl" />
-        <div className="relative mx-auto flex max-w-7xl flex-col items-center px-4 py-20 text-center lg:px-8 lg:py-28">
-          <span className="inline-block rounded-full border border-amber-300/60 bg-amber-100/60 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-amber-800">
-            {t("Hero.tagline")}
-          </span>
-          <h1 className="mt-5 max-w-4xl text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
-            {t("Hero.title")}
-          </h1>
-          <p className="mt-5 max-w-2xl text-base text-slate-600 sm:text-lg">
-            {t("Hero.subtitle")}
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Link
-              href="/annunci"
-              className="inline-flex h-12 items-center justify-center rounded-lg bg-slate-900 px-6 text-sm font-semibold text-white shadow-sm transition-all hover:bg-slate-700 hover:shadow"
-            >
-              {t("Hero.ctaPrimary")}
-            </Link>
-            <Link
-              href="/pubblica"
-              className="inline-flex h-12 items-center justify-center rounded-lg border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 shadow-sm transition-all hover:border-slate-400 hover:shadow"
-            >
-              {t("Hero.ctaSecondary")}
-            </Link>
-          </div>
-        </div>
-      </section>
+      <Hero />
+
+      <FeaturedListings />
 
       {/* CATEGORIES */}
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            {t("Categories.sectionTitle")}
-          </h2>
-          <p className="mt-4 text-base text-slate-600">
-            {t("Categories.sectionSubtitle")}
-          </p>
-        </div>
-
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
-          {/* RTB ATTIVO */}
-          <article className="group relative flex flex-col rounded-2xl border-2 border-amber-300 bg-white p-6 shadow-sm transition-all hover:shadow-md">
-            <div className="flex items-center justify-between">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-amber-100 text-2xl">
-                ⚡
-              </div>
-              <span className="rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800">
-                {t("Categories.statusActive")}
-              </span>
-            </div>
-            <h3 className="mt-5 text-lg font-semibold text-slate-900">
-              {t("Categories.rtbTitle")}
-            </h3>
-            <p className="mt-2 flex-1 text-sm text-slate-600">
-              {t("Categories.rtbDescription")}
+      <section className="bg-stone-50 py-20">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+              {t("Categories.sectionTitle")}
+            </h2>
+            <p className="mt-4 text-base text-slate-600">
+              {t("Categories.sectionSubtitle")}
             </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            {/* RTB ATTIVO */}
             <Link
               href="/annunci"
-              className="mt-5 inline-flex items-center text-sm font-semibold text-amber-700 transition-colors group-hover:text-amber-800"
+              className="group flex flex-col overflow-hidden rounded-2xl border-2 border-amber-300 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
             >
-              {t("Categories.rtbCta")} →
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={IMG.categoryRtb}
+                  alt={t("Categories.rtbTitle")}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <span className="absolute right-3 top-3 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 shadow-sm">
+                  {t("Categories.statusActive")}
+                </span>
+              </div>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-semibold text-slate-900">
+                  {t("Categories.rtbTitle")}
+                </h3>
+                <p className="mt-2 flex-1 text-sm text-slate-600">
+                  {t("Categories.rtbDescription")}
+                </p>
+                <span className="mt-5 inline-flex items-center text-sm font-semibold text-amber-700 group-hover:text-amber-800">
+                  {t("Categories.rtbCta")} →
+                </span>
+              </div>
             </Link>
-          </article>
 
-          {/* GREENFIELD WIP */}
-          <article className="relative flex flex-col rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
-            <div className="flex items-center justify-between">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-stone-100 text-2xl grayscale">
-                🌾
+            {/* GREENFIELD WIP */}
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={IMG.categoryGreenfield}
+                  alt={t("Categories.greenfieldTitle")}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover opacity-70"
+                />
+                <span className="absolute right-3 top-3 rounded-full bg-stone-100 px-2.5 py-1 text-xs font-semibold text-stone-700 shadow-sm">
+                  {t("Categories.statusUpcoming")}
+                </span>
               </div>
-              <span className="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-semibold text-stone-600">
-                {t("Categories.statusUpcoming")}
-              </span>
-            </div>
-            <h3 className="mt-5 text-lg font-semibold text-slate-700">
-              {t("Categories.greenfieldTitle")}
-            </h3>
-            <p className="mt-2 flex-1 text-sm text-slate-500">
-              {t("Categories.greenfieldDescription")}
-            </p>
-            <span className="mt-5 text-sm font-medium text-stone-400">
-              {t("Categories.comingSoon")}
-            </span>
-          </article>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-semibold text-slate-700">
+                  {t("Categories.greenfieldTitle")}
+                </h3>
+                <p className="mt-2 flex-1 text-sm text-slate-500">
+                  {t("Categories.greenfieldDescription")}
+                </p>
+                <span className="mt-5 text-sm font-medium text-stone-400">
+                  {t("Categories.comingSoon")}
+                </span>
+              </div>
+            </article>
 
-          {/* PLANTS WIP */}
-          <article className="relative flex flex-col rounded-2xl border border-stone-200 bg-white p-6 shadow-sm">
-            <div className="flex items-center justify-between">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-stone-100 text-2xl grayscale">
-                🔋
+            {/* PLANTS WIP */}
+            <article className="flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
+              <div className="relative aspect-[16/10] overflow-hidden">
+                <Image
+                  src={IMG.categoryPlants}
+                  alt={t("Categories.plantsTitle")}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                  className="object-cover opacity-70"
+                />
+                <span className="absolute right-3 top-3 rounded-full bg-stone-100 px-2.5 py-1 text-xs font-semibold text-stone-700 shadow-sm">
+                  {t("Categories.statusUpcoming")}
+                </span>
               </div>
-              <span className="rounded-full bg-stone-100 px-2.5 py-1 text-xs font-semibold text-stone-600">
-                {t("Categories.statusUpcoming")}
-              </span>
-            </div>
-            <h3 className="mt-5 text-lg font-semibold text-slate-700">
-              {t("Categories.plantsTitle")}
-            </h3>
-            <p className="mt-2 flex-1 text-sm text-slate-500">
-              {t("Categories.plantsDescription")}
-            </p>
-            <span className="mt-5 text-sm font-medium text-stone-400">
-              {t("Categories.comingSoon")}
-            </span>
-          </article>
+              <div className="flex flex-1 flex-col p-6">
+                <h3 className="text-lg font-semibold text-slate-700">
+                  {t("Categories.plantsTitle")}
+                </h3>
+                <p className="mt-2 flex-1 text-sm text-slate-500">
+                  {t("Categories.plantsDescription")}
+                </p>
+                <span className="mt-5 text-sm font-medium text-stone-400">
+                  {t("Categories.comingSoon")}
+                </span>
+              </div>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -230,47 +229,53 @@ export default async function Home({
         </div>
       </section>
 
+      <SellWithUs />
+
       {/* HOW IT WORKS */}
-      <section className="mx-auto max-w-7xl px-4 py-20 lg:px-8">
-        <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-          {t("HowItWorks.sectionTitle")}
-        </h2>
-        <ol className="mt-12 grid gap-8 md:grid-cols-3">
-          <li className="flex flex-col">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
-              1
-            </span>
-            <h3 className="mt-4 text-lg font-semibold text-slate-900">
-              {t("HowItWorks.step1Title")}
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              {t("HowItWorks.step1Description")}
-            </p>
-          </li>
-          <li className="flex flex-col">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
-              2
-            </span>
-            <h3 className="mt-4 text-lg font-semibold text-slate-900">
-              {t("HowItWorks.step2Title")}
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              {t("HowItWorks.step2Description")}
-            </p>
-          </li>
-          <li className="flex flex-col">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
-              3
-            </span>
-            <h3 className="mt-4 text-lg font-semibold text-slate-900">
-              {t("HowItWorks.step3Title")}
-            </h3>
-            <p className="mt-2 text-sm text-slate-600">
-              {t("HowItWorks.step3Description")}
-            </p>
-          </li>
-        </ol>
+      <section className="bg-white py-20">
+        <div className="mx-auto max-w-7xl px-4 lg:px-8">
+          <h2 className="text-center text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+            {t("HowItWorks.sectionTitle")}
+          </h2>
+          <ol className="mt-12 grid gap-8 md:grid-cols-3">
+            <li className="flex flex-col">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+                1
+              </span>
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                {t("HowItWorks.step1Title")}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                {t("HowItWorks.step1Description")}
+              </p>
+            </li>
+            <li className="flex flex-col">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+                2
+              </span>
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                {t("HowItWorks.step2Title")}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                {t("HowItWorks.step2Description")}
+              </p>
+            </li>
+            <li className="flex flex-col">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white">
+                3
+              </span>
+              <h3 className="mt-4 text-lg font-semibold text-slate-900">
+                {t("HowItWorks.step3Title")}
+              </h3>
+              <p className="mt-2 text-sm text-slate-600">
+                {t("HowItWorks.step3Description")}
+              </p>
+            </li>
+          </ol>
+        </div>
       </section>
+
+      <StatsSection />
     </>
   );
 }
