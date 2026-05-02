@@ -1,0 +1,89 @@
+{
+  "Metadata": {
+    "title": "RESolare — El marketplace fotovoltaico italiano",
+    "description": "Compra y vende terrenos autorizados, proyectos RTB y plantas fotovoltaicas en operación. Sin intermediarios."
+  },
+  "Header": {
+    "navAnnunci": "Anuncios",
+    "navTerreni": "Vende tu terreno",
+    "navImpianti": "Vende tu planta",
+    "navSviluppatori": "Para desarrolladores",
+    "signIn": "Acceder",
+    "signUp": "Registrarse"
+  },
+  "Hero": {
+    "tagline": "El marketplace vertical fotovoltaico en Italia",
+    "title": "Terrenos, proyectos RTB y plantas fotovoltaicas. Todo en un solo lugar.",
+    "subtitle": "Conectamos propietarios, desarrolladores e inversores sin intermediarios. Publica gratis o vende con nuestro soporte premium.",
+    "ctaPrimary": "Explorar anuncios",
+    "ctaSecondary": "Publicar un anuncio",
+    "searchPlaceholder": "Busca por región, MW, estado de autorización…"
+  },
+  "Categories": {
+    "sectionTitle": "Tres categorías, una plataforma",
+    "sectionSubtitle": "Desde terrenos greenfield hasta activos en operación. RESolare cubre toda la cadena de valor fotovoltaica.",
+    "rtbTitle": "Terrenos autorizados y RTB",
+    "rtbDescription": "Proyectos Ready-to-Build o en fase avanzada de autorización, con presupuesto de conexión y estudios de viabilidad.",
+    "rtbCta": "Ver anuncios RTB",
+    "greenfieldTitle": "Terrenos greenfield",
+    "greenfieldDescription": "Áreas agrícolas, industriales o en desuso sin trámites iniciados. Para propietarios que quieren monetizar.",
+    "comingSoon": "Próximamente",
+    "plantsTitle": "Plantas en operación",
+    "plantsDescription": "Plantas fotovoltaicas en operación — agrovoltaicas, en tejado y en suelo. Con o sin incentivos GSE.",
+    "statusActive": "Activo",
+    "statusUpcoming": "Próximamente"
+  },
+  "Stakeholders": {
+    "sectionTitle": "¿Para quién es RESolare?",
+    "ownerTitle": "Propietarios de terrenos",
+    "ownerBullet1": "Aumenta el rendimiento de tu terreno hasta 10x respecto a la agricultura",
+    "ownerBullet2": "Venta o derecho de superficie, tú eliges",
+    "ownerBullet3": "Sin agencias, sin comisiones ocultas",
+    "ownerCta": "Publica tu terreno gratis",
+    "developerTitle": "Desarrolladores e ingenieros",
+    "developerBullet1": "Encuentra áreas con datos técnicos verificados",
+    "developerBullet2": "Vende proyectos autorizados a fondos y utilities",
+    "developerBullet3": "Servicio premium con soporte a la due diligence",
+    "developerCta": "Conviértete en desarrollador RESolare",
+    "buyerTitle": "Inversores y compradores",
+    "buyerBullet1": "Pipeline de activos solares cualificados",
+    "buyerBullet2": "Datarooms confidenciales con NDA digital",
+    "buyerBullet3": "Filtros técnicos por MW, irradiancia, conexión",
+    "buyerCta": "Explorar oportunidades"
+  },
+  "HowItWorks": {
+    "sectionTitle": "Cómo funciona",
+    "step1Title": "Publica o busca",
+    "step1Description": "Crea tu cuenta en minutos y publica un anuncio o explora los existentes con filtros técnicos específicos del fotovoltaico.",
+    "step2Title": "Verifica y accede al dataroom",
+    "step2Description": "Para cada proyecto puedes acceder a documentos, autorizaciones y estudios tras aceptar un NDA digital.",
+    "step3Title": "Trato directo",
+    "step3Description": "Sin intermediarios. Chatea directamente con el vendedor o activa nuestro servicio premium para gestión de la transacción."
+  },
+  "Footer": {
+    "tagline": "El marketplace fotovoltaico italiano",
+    "navigation": "Navegación",
+    "company": "Empresa",
+    "legal": "Legal",
+    "about": "Sobre nosotros",
+    "contact": "Contacto",
+    "blog": "Blog",
+    "terms": "Términos y condiciones",
+    "privacy": "Política de privacidad",
+    "cookies": "Política de cookies",
+    "rights": "Todos los derechos reservados."
+  },
+  "Listings": {
+    "pageTitle": "Anuncios",
+    "pageSubtitle": "Explora terrenos autorizados y proyectos RTB disponibles en Italia",
+    "emptyState": "Aún no hay anuncios disponibles. Estamos construyendo la base de datos. Regístrate para ser el primero en saberlo.",
+    "filters": {
+      "region": "Región",
+      "minMW": "MW mínimos",
+      "maxMW": "MW máximos",
+      "status": "Estado autorización",
+      "connection": "Conexión a red",
+      "priceRange": "Rango de precio"
+    }
+  }
+}

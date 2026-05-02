@@ -1,0 +1,89 @@
+{
+  "Metadata": {
+    "title": "RESolare — The Italian solar marketplace",
+    "description": "Buy and sell authorized land, RTB projects and operating photovoltaic plants. No intermediaries."
+  },
+  "Header": {
+    "navAnnunci": "Listings",
+    "navTerreni": "Sell your land",
+    "navImpianti": "Sell your plant",
+    "navSviluppatori": "For developers",
+    "signIn": "Sign in",
+    "signUp": "Sign up"
+  },
+  "Hero": {
+    "tagline": "The vertical solar marketplace in Italy",
+    "title": "Land, RTB projects and PV plants. All in one place.",
+    "subtitle": "We connect landowners, developers and investors without intermediaries. Post for free or sell with our premium support.",
+    "ctaPrimary": "Browse listings",
+    "ctaSecondary": "Post a listing",
+    "searchPlaceholder": "Search by region, MW, permit status…"
+  },
+  "Categories": {
+    "sectionTitle": "Three categories, one platform",
+    "sectionSubtitle": "From greenfield land to operating assets. RESolare covers the entire solar value chain.",
+    "rtbTitle": "Authorized land & RTB",
+    "rtbDescription": "Ready-to-Build projects or in advanced permit stage, with grid connection quote and feasibility studies.",
+    "rtbCta": "View RTB listings",
+    "greenfieldTitle": "Greenfield land",
+    "greenfieldDescription": "Agricultural, industrial or brownfield areas without permits. For owners who want to monetize.",
+    "comingSoon": "Coming soon",
+    "plantsTitle": "Operating plants",
+    "plantsDescription": "Operating PV plants — agrivoltaics, rooftop and ground-mounted. With or without GSE incentives.",
+    "statusActive": "Active",
+    "statusUpcoming": "Upcoming"
+  },
+  "Stakeholders": {
+    "sectionTitle": "Who is RESolare for",
+    "ownerTitle": "Landowners",
+    "ownerBullet1": "Increase your land yield up to 10x compared to farming",
+    "ownerBullet2": "Full sale or surface right — your choice",
+    "ownerBullet3": "No agencies, no hidden commissions",
+    "ownerCta": "Post your land for free",
+    "developerTitle": "Developers & engineers",
+    "developerBullet1": "Find areas with verified technical data",
+    "developerBullet2": "Sell authorized projects to funds and utilities",
+    "developerBullet3": "Premium service with due-diligence support",
+    "developerCta": "Become a RESolare developer",
+    "buyerTitle": "Investors & buyers",
+    "buyerBullet1": "Pipeline of qualified solar assets",
+    "buyerBullet2": "Confidential datarooms with digital NDA",
+    "buyerBullet3": "Technical filters for MW, irradiance, connection",
+    "buyerCta": "Explore opportunities"
+  },
+  "HowItWorks": {
+    "sectionTitle": "How it works",
+    "step1Title": "Post or search",
+    "step1Description": "Create your account in minutes and post a listing or browse existing ones with solar-specific technical filters.",
+    "step2Title": "Verify and access dataroom",
+    "step2Description": "For every project you can access documents, permits and studies after accepting a digital NDA.",
+    "step3Title": "Direct deal",
+    "step3Description": "No intermediaries. Chat directly with the seller, or activate our premium service for transaction support."
+  },
+  "Footer": {
+    "tagline": "The Italian solar marketplace",
+    "navigation": "Navigation",
+    "company": "Company",
+    "legal": "Legal",
+    "about": "About us",
+    "contact": "Contact",
+    "blog": "Blog",
+    "terms": "Terms and conditions",
+    "privacy": "Privacy policy",
+    "cookies": "Cookie policy",
+    "rights": "All rights reserved."
+  },
+  "Listings": {
+    "pageTitle": "Listings",
+    "pageSubtitle": "Browse authorized land and RTB projects available in Italy",
+    "emptyState": "No listings available yet. We are building the database. Sign up to be the first to know.",
+    "filters": {
+      "region": "Region",
+      "minMW": "Min MW",
+      "maxMW": "Max MW",
+      "status": "Permit status",
+      "connection": "Grid connection",
+      "priceRange": "Price range"
+    }
+  }
+}

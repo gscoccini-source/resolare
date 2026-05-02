@@ -1,0 +1,89 @@
+{
+  "Metadata": {
+    "title": "RESolare — Il marketplace del fotovoltaico italiano",
+    "description": "Compra e vendi terreni autorizzati, progetti RTB e impianti fotovoltaici in esercizio. Senza intermediazioni."
+  },
+  "Header": {
+    "navAnnunci": "Annunci",
+    "navTerreni": "Per chi vende un terreno",
+    "navImpianti": "Per chi vende un impianto",
+    "navSviluppatori": "Per gli sviluppatori",
+    "signIn": "Accedi",
+    "signUp": "Registrati"
+  },
+  "Hero": {
+    "tagline": "Il marketplace verticale del fotovoltaico in Italia",
+    "title": "Terreni, progetti RTB e impianti fotovoltaici. Tutto in un unico posto.",
+    "subtitle": "Connettiamo proprietari di terreni, sviluppatori e investitori senza intermediari. Pubblica gratis o vendi con il nostro supporto premium.",
+    "ctaPrimary": "Esplora gli annunci",
+    "ctaSecondary": "Pubblica un annuncio",
+    "searchPlaceholder": "Cerca per regione, MW, stato autorizzativo…"
+  },
+  "Categories": {
+    "sectionTitle": "Tre categorie, una piattaforma",
+    "sectionSubtitle": "Da terreni greenfield ad asset in esercizio. RESolare copre l'intera filiera del fotovoltaico.",
+    "rtbTitle": "Terreni autorizzati e RTB",
+    "rtbDescription": "Progetti Ready-to-Build o in fase autorizzativa avanzata, con preventivo di connessione e studi di fattibilità.",
+    "rtbCta": "Vedi annunci RTB",
+    "greenfieldTitle": "Terreni greenfield",
+    "greenfieldDescription": "Aree agricole, industriali o dismesse senza iter avviato. Per proprietari che vogliono valorizzare la rendita.",
+    "comingSoon": "Prossimamente",
+    "plantsTitle": "Impianti realizzati",
+    "plantsDescription": "Impianti fotovoltaici in esercizio, agrivoltaici, su tetto e a terra. Anche con incentivi GSE o in market parity.",
+    "statusActive": "Attivo",
+    "statusUpcoming": "In arrivo"
+  },
+  "Stakeholders": {
+    "sectionTitle": "Per chi è RESolare",
+    "ownerTitle": "Proprietari di terreni",
+    "ownerBullet1": "Aumenta la rendita del tuo terreno fino a 10x rispetto all'agricoltura",
+    "ownerBullet2": "Vendita o diritto di superficie, scegli tu",
+    "ownerBullet3": "Niente agenzie, niente commissioni nascoste",
+    "ownerCta": "Pubblica gratis il tuo terreno",
+    "developerTitle": "Sviluppatori e ingegneri",
+    "developerBullet1": "Trova aree con caratteristiche tecniche già verificate",
+    "developerBullet2": "Vendi progetti autorizzati a fondi e utility",
+    "developerBullet3": "Servizio premium con supporto alla due diligence",
+    "developerCta": "Diventa sviluppatore RESolare",
+    "buyerTitle": "Investitori e compratori",
+    "buyerBullet1": "Pipeline di asset fotovoltaici qualificati",
+    "buyerBullet2": "Dataroom riservati con NDA digitale",
+    "buyerBullet3": "Filtri tecnici per MW, irraggiamento, connessione",
+    "buyerCta": "Esplora le opportunità"
+  },
+  "HowItWorks": {
+    "sectionTitle": "Come funziona",
+    "step1Title": "Pubblica o cerca",
+    "step1Description": "Crea il tuo account in pochi minuti e pubblica un annuncio o esplora quelli esistenti con filtri tecnici dedicati al fotovoltaico.",
+    "step2Title": "Verifica e accedi al dataroom",
+    "step2Description": "Per ogni progetto puoi accedere a documenti, autorizzazioni e studi previa accettazione di un NDA digitale.",
+    "step3Title": "Trattativa diretta",
+    "step3Description": "Niente intermediari. Chatti direttamente con il venditore, oppure attivi il nostro servizio premium per la gestione della transazione."
+  },
+  "Footer": {
+    "tagline": "Il marketplace del fotovoltaico italiano",
+    "navigation": "Navigazione",
+    "company": "Azienda",
+    "legal": "Note legali",
+    "about": "Chi siamo",
+    "contact": "Contatti",
+    "blog": "Blog",
+    "terms": "Termini e condizioni",
+    "privacy": "Privacy policy",
+    "cookies": "Cookie policy",
+    "rights": "Tutti i diritti riservati."
+  },
+  "Listings": {
+    "pageTitle": "Annunci",
+    "pageSubtitle": "Esplora terreni autorizzati e progetti RTB disponibili in Italia",
+    "emptyState": "Nessun annuncio disponibile al momento. Stiamo costruendo il database. Iscriviti per essere il primo a saperlo.",
+    "filters": {
+      "region": "Regione",
+      "minMW": "MW minimi",
+      "maxMW": "MW massimi",
+      "status": "Stato autorizzativo",
+      "connection": "Connessione rete",
+      "priceRange": "Fascia di prezzo"
+    }
+  }
+}
