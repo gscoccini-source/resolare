@@ -3,22 +3,23 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { IMG } from "@/lib/images";
 
-type StatusKey = "RTB" | "Operating" | "Greenfield" | "Permitting";
+type StatusKey = "RTB" | "Operating" | "Area" | "COD" | "Revamping";
 
 const STATUS_STYLES: Record<StatusKey, string> = {
+  Area: "bg-stone-200 text-stone-800",
   RTB: "bg-amber-100 text-amber-900",
+  COD: "bg-sky-100 text-sky-900",
   Operating: "bg-emerald-100 text-emerald-900",
-  Greenfield: "bg-stone-200 text-stone-800",
-  Permitting: "bg-sky-100 text-sky-900",
+  Revamping: "bg-violet-100 text-violet-900",
 };
 
 const ITEMS = [
   { id: "p1", img: IMG.listingAgriPV, status: "RTB" as StatusKey },
   { id: "p2", img: IMG.listingRooftop, status: "Operating" as StatusKey },
-  { id: "p3", img: IMG.listingGround, status: "RTB" as StatusKey },
+  { id: "p3", img: IMG.listingGround, status: "COD" as StatusKey },
   { id: "p4", img: IMG.listingResidential, status: "Operating" as StatusKey },
-  { id: "p5", img: IMG.listingGreenfield, status: "Greenfield" as StatusKey },
-  { id: "p6", img: IMG.listingUtility, status: "Permitting" as StatusKey },
+  { id: "p5", img: IMG.listingGreenfield, status: "Area" as StatusKey },
+  { id: "p6", img: IMG.listingUtility, status: "Revamping" as StatusKey },
 ];
 
 export async function FeaturedListings() {

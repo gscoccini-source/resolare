@@ -7,6 +7,24 @@ import { FeaturedListings } from "@/components/FeaturedListings";
 import { SellWithUs } from "@/components/SellWithUs";
 import { StatsSection } from "@/components/StatsSection";
 
+type CategoryKey = "area" | "rtb" | "cod" | "operating" | "revamping";
+
+interface CategoryDef {
+  key: CategoryKey;
+  active: boolean;
+  img: string;
+  titleKey: string;
+  descKey: string;
+}
+
+const CATEGORIES: CategoryDef[] = [
+  { key: "area", active: false, img: IMG.categoryArea, titleKey: "areaTitle", descKey: "areaDescription" },
+  { key: "rtb", active: true, img: IMG.categoryRtb, titleKey: "rtbTitle", descKey: "rtbDescription" },
+  { key: "cod", active: false, img: IMG.categoryCod, titleKey: "codTitle", descKey: "codDescription" },
+  { key: "operating", active: false, img: IMG.categoryOperating, titleKey: "operatingTitle", descKey: "operatingDescription" },
+  { key: "revamping", active: false, img: IMG.categoryRevamping, titleKey: "revampingTitle", descKey: "revampingDescription" },
+];
+
 export default async function Home({
   params,
 }: {
@@ -22,7 +40,7 @@ export default async function Home({
 
       <FeaturedListings />
 
-      {/* CATEGORIES */}
+      {/* CATEGORIES — 5 macro categorie milkthesun-style */}
       <section className="bg-stone-50 py-20">
         <div className="mx-auto max-w-7xl px-4 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
@@ -34,90 +52,78 @@ export default async function Home({
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {/* RTB ATTIVO */}
-            <Link
-              href="/annunci"
-              className="group flex flex-col overflow-hidden rounded-2xl border-2 border-amber-300 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
-            >
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={IMG.categoryRtb}
-                  alt={t("Categories.rtbTitle")}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <span className="absolute right-3 top-3 rounded-full bg-emerald-100 px-2.5 py-1 text-xs font-semibold text-emerald-800 shadow-sm">
-                  {t("Categories.statusActive")}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-slate-900">
-                  {t("Categories.rtbTitle")}
-                </h3>
-                <p className="mt-2 flex-1 text-sm text-slate-600">
-                  {t("Categories.rtbDescription")}
-                </p>
-                <span className="mt-5 inline-flex items-center text-sm font-semibold text-amber-700 group-hover:text-amber-800">
-                  {t("Categories.rtbCta")} →
-                </span>
-              </div>
-            </Link>
+          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+            {CATEGORIES.map((cat) => {
+              const isActive = cat.active;
+              const cardClass = isActive
+                ? "border-2 border-amber-300 bg-white shadow-sm transition-all hover:-translate-y-0.5 hover:shadow-lg"
+                : "border border-stone-200 bg-white shadow-sm";
+              const titleClass = isActive ? "text-slate-900" : "text-slate-700";
+              const descClass = isActive ? "text-slate-600" : "text-slate-500";
 
-            {/* GREENFIELD WIP */}
-            <article className="flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={IMG.categoryGreenfield}
-                  alt={t("Categories.greenfieldTitle")}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover opacity-70"
-                />
-                <span className="absolute right-3 top-3 rounded-full bg-stone-100 px-2.5 py-1 text-xs font-semibold text-stone-700 shadow-sm">
-                  {t("Categories.statusUpcoming")}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-slate-700">
-                  {t("Categories.greenfieldTitle")}
-                </h3>
-                <p className="mt-2 flex-1 text-sm text-slate-500">
-                  {t("Categories.greenfieldDescription")}
-                </p>
-                <span className="mt-5 text-sm font-medium text-stone-400">
-                  {t("Categories.comingSoon")}
-                </span>
-              </div>
-            </article>
+              const cardContent = (
+                <>
+                  <div className="relative aspect-[16/10] overflow-hidden">
+                    <Image
+                      src={cat.img}
+                      alt={t(`Categories.${cat.titleKey}`)}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 20vw"
+                      className={`object-cover ${
+                        isActive
+                          ? "transition-transform duration-500 group-hover:scale-105"
+                          : "opacity-70"
+                      }`}
+                    />
+                    <span
+                      className={`absolute right-3 top-3 rounded-full px-2.5 py-1 text-xs font-semibold shadow-sm ${
+                        isActive
+                          ? "bg-emerald-100 text-emerald-800"
+                          : "bg-stone-100 text-stone-700"
+                      }`}
+                    >
+                      {isActive
+                        ? t("Categories.statusActive")
+                        : t("Categories.statusUpcoming")}
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col p-5">
+                    <h3 className={`text-base font-semibold ${titleClass}`}>
+                      {t(`Categories.${cat.titleKey}`)}
+                    </h3>
+                    <p className={`mt-2 flex-1 text-sm ${descClass}`}>
+                      {t(`Categories.${cat.descKey}`)}
+                    </p>
+                    {isActive ? (
+                      <span className="mt-4 inline-flex items-center text-sm font-semibold text-amber-700 group-hover:text-amber-800">
+                        {t("Categories.rtbCta")} →
+                      </span>
+                    ) : (
+                      <span className="mt-4 text-sm font-medium text-stone-400">
+                        {t("Categories.comingSoon")}
+                      </span>
+                    )}
+                  </div>
+                </>
+              );
 
-            {/* PLANTS WIP */}
-            <article className="flex flex-col overflow-hidden rounded-2xl border border-stone-200 bg-white shadow-sm">
-              <div className="relative aspect-[16/10] overflow-hidden">
-                <Image
-                  src={IMG.categoryPlants}
-                  alt={t("Categories.plantsTitle")}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover opacity-70"
-                />
-                <span className="absolute right-3 top-3 rounded-full bg-stone-100 px-2.5 py-1 text-xs font-semibold text-stone-700 shadow-sm">
-                  {t("Categories.statusUpcoming")}
-                </span>
-              </div>
-              <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-slate-700">
-                  {t("Categories.plantsTitle")}
-                </h3>
-                <p className="mt-2 flex-1 text-sm text-slate-500">
-                  {t("Categories.plantsDescription")}
-                </p>
-                <span className="mt-5 text-sm font-medium text-stone-400">
-                  {t("Categories.comingSoon")}
-                </span>
-              </div>
-            </article>
+              return isActive ? (
+                <Link
+                  key={cat.key}
+                  href="/annunci"
+                  className={`group flex flex-col overflow-hidden rounded-2xl ${cardClass}`}
+                >
+                  {cardContent}
+                </Link>
+              ) : (
+                <article
+                  key={cat.key}
+                  className={`flex flex-col overflow-hidden rounded-2xl ${cardClass}`}
+                >
+                  {cardContent}
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

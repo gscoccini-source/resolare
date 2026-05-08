@@ -41,6 +41,7 @@ export function SearchBar() {
   const [category, setCategory] = useState("all");
   const [region, setRegion] = useState("");
   const [mwRange, setMwRange] = useState("any");
+  const [surface, setSurface] = useState("all");
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -48,6 +49,7 @@ export function SearchBar() {
     if (category !== "all") params.set("category", category);
     if (region) params.set("region", region);
     if (mwRange !== "any") params.set("mw", mwRange);
+    if (surface !== "all") params.set("surface", surface);
     const query = params.toString();
     router.push(`/annunci${query ? `?${query}` : ""}`);
   }
@@ -57,7 +59,7 @@ export function SearchBar() {
       onSubmit={handleSubmit}
       className="rounded-2xl bg-white p-3 shadow-2xl shadow-black/20 ring-1 ring-black/5"
     >
-      <div className="grid grid-cols-1 gap-2 md:grid-cols-[1.2fr_1.2fr_1fr_auto]">
+      <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 md:grid-cols-[1.5fr_1fr_0.9fr_0.9fr_auto]">
         <label className="flex flex-col gap-1 rounded-lg px-3 py-2 hover:bg-stone-50">
           <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
             {t("searchTitle")}
@@ -68,9 +70,11 @@ export function SearchBar() {
             className="border-0 bg-transparent p-0 text-sm font-medium text-slate-900 focus:ring-0 focus:outline-none"
           >
             <option value="all">{t("searchCategoryAll")}</option>
+            <option value="area">{t("searchCategoryArea")}</option>
             <option value="rtb">{t("searchCategoryRtb")}</option>
-            <option value="greenfield">{t("searchCategoryGreenfield")}</option>
-            <option value="plants">{t("searchCategoryPlants")}</option>
+            <option value="cod">{t("searchCategoryCod")}</option>
+            <option value="operating">{t("searchCategoryOperating")}</option>
+            <option value="revamping">{t("searchCategoryRevamping")}</option>
           </select>
         </label>
 
@@ -106,6 +110,22 @@ export function SearchBar() {
                 {"label" in r ? r.label : t(r.labelKey)}
               </option>
             ))}
+          </select>
+        </label>
+
+        <label className="flex flex-col gap-1 rounded-lg px-3 py-2 hover:bg-stone-50 md:border-l md:border-stone-200">
+          <span className="text-[11px] font-semibold uppercase tracking-wider text-slate-500">
+            {t("searchSurface")}
+          </span>
+          <select
+            value={surface}
+            onChange={(e) => setSurface(e.target.value)}
+            className="border-0 bg-transparent p-0 text-sm font-medium text-slate-900 focus:ring-0 focus:outline-none"
+          >
+            <option value="all">{t("searchSurfaceAll")}</option>
+            <option value="roof">{t("searchSurfaceRoof")}</option>
+            <option value="ground">{t("searchSurfaceGround")}</option>
+            <option value="bess">{t("searchSurfaceBess")}</option>
           </select>
         </label>
 

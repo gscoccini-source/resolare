@@ -10,13 +10,17 @@ export const IMG = {
   // Sorgente: unsplash.com/it/foto/pannelli-solari-neri-sul-campo-in-erba-verde-IwY-27ceRCA
   heroBackground: `${UNSPLASH}/photo-1629726797843-618688139f5a?auto=format&fit=crop&w=2000&q=80`,
 
-  // CATEGORIE
-  // Aerial di pannelli solari blu su erba verde (Germania) — verificata
+  // CATEGORIE (5 macro, allineate a milkthesun)
+  // Area Disponibile (terreni senza iter) — campo agricolo al tramonto
+  categoryArea: `${UNSPLASH}/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=70`,
+  // Autorizzato RTB — aerial pannelli blu su erba (rappresenta il progetto autorizzato)
   categoryRtb: `${UNSPLASH}/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=1200&q=70`,
-  // Campo agricolo al tramonto (greenfield, no solare) — verificata
-  categoryGreenfield: `${UNSPLASH}/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=70`,
-  // Pannelli solari ravvicinati su campo verde — verificata
-  categoryPlants: `${UNSPLASH}/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=70`,
+  // Impianto a COD (chiavi in mano, appena entrato in esercizio) — impianto FV aereo
+  categoryCod: `${UNSPLASH}/photo-1629726797843-618688139f5a?auto=format&fit=crop&w=1200&q=70`,
+  // Impianto in Esercizio — pannelli ravvicinati con sole/cielo
+  categoryOperating: `${UNSPLASH}/photo-1509391366360-2e959784a276?auto=format&fit=crop&w=1200&q=70`,
+  // Revamping & Repowering — ingegnere al lavoro sui pannelli (manutenzione/upgrade)
+  categoryRevamping: `${UNSPLASH}/photo-1719848576338-9516ba7ccd8b?auto=format&fit=crop&w=1200&q=70`,
 
   // SELL WITH US — ingegnere con casco giallo che monta pannelli — verificata
   // Sorgente: unsplash.com/photos/JlhvFEVMwng
